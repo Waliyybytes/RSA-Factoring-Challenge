@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import sys
+
+f = open(sys.argv[1])
+num = int(f.readline())
+ans = 1
+if num % 2 == 0:
+    print("{:d}={:d}*2".format(num, num//2))
+    exit()
+for i in range(3, num // 2, 2):
+    if num % i == 0:
+        ans = num // i
+        break
+print("{:d}={:d}*{:d}".format(num, ans, i))
